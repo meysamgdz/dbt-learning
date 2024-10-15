@@ -21,7 +21,7 @@ WITH routes AS (
            routes.*
     FROM {{ref("prep_flights")}}
     JOIN routes
-    ON routes.dest = prep_airports.faa
+    ON routes.dest = {{ref("prep_airports")}}.faa
 )
 -- Outer query to join on origin
 SELECT city AS origin_city,
@@ -30,6 +30,6 @@ SELECT city AS origin_city,
        routes_joined.*
 FROM {{ref("prep_airports")}}
 JOIN routes_joined
-ON routes_joined.origin = prep_airports.faa
+ON routes_joined.origin = {{ref("prep_airports")}}.faa
 ORDER BY origin_city
 
