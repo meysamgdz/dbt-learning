@@ -19,7 +19,7 @@ WITH routes AS (
            country AS dest_country,
            name AS dest_name,
            routes.*
-    FROM {{ref("prep_flights")}}
+    FROM {{ref("prep_airports")}}
     JOIN routes
     ON routes.dest = {{ref("prep_airports")}}.faa
 )
