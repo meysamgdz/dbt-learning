@@ -26,4 +26,4 @@ flights_cleaned AS (
            ,diverted
     FROM flights_one_month
 )
-SELECT * FROM flights_cleaned;
+SELECT * FROM flights_cleaned
